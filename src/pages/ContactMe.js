@@ -25,7 +25,7 @@ const ContactMe = () => {
             setMessageInput('');
 };
    return (
-    <form className='w-[50vh] md:w-[100vh] mx-auto mt-8'>
+    <form className='w-auto my-10 md:w-[75vh] md:mx-auto'>
         <div className='mb-6'>
             <label htmlfor='name' className='block m-2 text-lg font-medium text-gray-900 dark:text-white'>Name</label>
              <input value={nameInput} type='text' name='name' onChange={handleInputChange} className='bg-gray-50 border border-gray-300 text-gray-900
