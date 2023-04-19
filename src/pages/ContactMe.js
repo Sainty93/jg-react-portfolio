@@ -1,16 +1,17 @@
-
 import React, { useState } from 'react';
+import { validateEmail } from '../utils/helpers';
 
 const ContactMe = () => {
     const [nameInput, setNameInput] = useState('');
     const [emailInput, setEmailInput] = useState('');
     const [messageInput, setMessageInput] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
 
     const handleInputChange = (e) => {
     const { name, value } = e.target;
 
 
-    return name === 'name'
+    name === 'name'
     ? setNameInput(value)
     : name === 'email'
     ? setEmailInput(value)
@@ -19,6 +20,11 @@ const ContactMe = () => {
 
     const handleFormSubmit = (e) => {
         e.preventDefault();
+
+    if (!validateEmail(emailInput)) {
+        setErrorMessage('Please enter a valid email');
+        return;
+    }
 
             setNameInput('');
             setEmailInput('');
